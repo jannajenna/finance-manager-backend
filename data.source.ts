@@ -15,7 +15,7 @@ export const dbConfig: TypeOrmModuleOptions = {
   logging: false,
   synchronize: true, //Not use durign production change to false. automatically syncs database schema with entities.
   entities: ['dist/**/*.entity{.ts,.js}'], //specifies the location of entity files
-  migrations: ['dist/src/migrations/*{.ts,.js}'], //location of migration files
+  migrations: [], //location of migration files - 'dist/src/migrations/*{.ts,.js}'
 };
 
 //The configuration is cast as DataSourceOptions to ensure compatibility with TypeORM's DataSource class.
