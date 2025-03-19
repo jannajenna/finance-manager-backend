@@ -9,7 +9,7 @@ export class CreateEntryDto {
   @IsNotEmpty()
   title: string;
 
-  //@IsNotEmpty()
+  @IsNotEmpty()
   @IsNumber()
   categoryId: number; // We'll pass the category's id to relate the entry
 }

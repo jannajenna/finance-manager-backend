@@ -12,7 +12,6 @@ export const dbConfig: TypeOrmModuleOptions = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   autoLoadEntities: true,
-  logging: false,
   synchronize: true, //Not use durign production change to false. automatically syncs database schema with entities.
   entities: ['dist/**/*.entity{.ts,.js}'], //specifies the location of entity files
   migrations: [], //location of migration files - 'dist/src/migrations/*{.ts,.js}'

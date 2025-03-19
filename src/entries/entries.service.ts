@@ -17,8 +17,12 @@ export class EntriesService {
   ) {}
 
   async create(createEntryDto: CreateEntryDto): Promise<Entry> {
+    if (!createEntryDto.categoryId) {
+      throw new NotFoundException('Category ID is required');
+    }
     // Create a new entry instance
     const entry = this.entryRepository.create({
+      title: createEntryDto.title,
       amount: createEntryDto.amount,
       // To relate the entry to a category, set a partial category object with just the id
       category: { id: createEntryDto.categoryId } as Category,
